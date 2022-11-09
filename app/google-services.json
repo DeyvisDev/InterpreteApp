@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "450139606867",
+    "project_id": "interpreteapp-ef22d",
+    "storage_bucket": "interpreteapp-ef22d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450139606867:android:90d24e48f0ccdce351dba6",
+        "android_client_info": {
+          "package_name": "com.example.interpreteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450139606867-fl05jiqf92ot72dvpotinsoqaubtp29g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeGOxu8WxluPnp4hICR8urwp_uloexwQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450139606867-fl05jiqf92ot72dvpotinsoqaubtp29g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
