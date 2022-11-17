@@ -5,9 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.google.firebase.FirebaseApp
-import com.google.firebase.appcheck.FirebaseAppCheck
-import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_actividad_menu.*
 
@@ -39,6 +36,16 @@ class ActividadMenu : AppCompatActivity() {
         btnDiccionario.setOnClickListener{
             startActivity(Intent(this, ActividadDiccionario::class.java))
         }
+        val btnPruebas = findViewById<Button>(R.id.btnPruebas);
+        btnPruebas.setOnClickListener{
+            startActivity(Intent(this, PruebasAct::class.java))
+        }
+        val btnPruebasRecycler = findViewById<Button>(R.id.btnPruebasRecycler);
+        btnPruebasRecycler.setOnClickListener{
+            startActivity(Intent(this, PruebasRecycler::class.java))
+        }
+
+
         val bundle = intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")

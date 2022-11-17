@@ -22,7 +22,7 @@ class RegActivity : AppCompatActivity() {
         }
     }
     private fun setup() {
-        title = "Registro"
+        title = "REGISTRO"
         btnSingUp.setOnClickListener {
             if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
                 if (passwordEditText.text.toString()==passwordEditText2.text.toString()) {

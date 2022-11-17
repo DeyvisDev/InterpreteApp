@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.InterpreteApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#00B8D4</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/textViewStyle</item>
+    </style>
+    <style name="textViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

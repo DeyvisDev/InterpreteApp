@@ -12,7 +12,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import com.example.interpreteapp.databinding.ActivityActividadGuiaSubirNuevoBinding
 import com.example.interpreteapp.databinding.ActivityActividadTextoSenaSubirNuevoBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
@@ -31,6 +30,10 @@ class ActividadTextoSenaSubirNuevo : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     private val File = 1
     private val database = Firebase.database
+    var uriImg = String
+
+
+
     private lateinit var binding : ActivityActividadTextoSenaSubirNuevoBinding
     val myRef = database.getReference("user")
     val db = FirebaseFirestore.getInstance()
@@ -104,9 +107,10 @@ class ActividadTextoSenaSubirNuevo : AppCompatActivity() {
         if (result.resultCode == Activity.RESULT_OK){
 
             val data = result.data?.data
+            //uriImg = result.data?.data
 
             Log.d("Ir a galeria link", data.toString())
-            val uriimg = data.toString()
+
             binding.imageView.setImageURI(data)
 
         }
@@ -134,11 +138,6 @@ class ActividadTextoSenaSubirNuevo : AppCompatActivity() {
                 val Folder: StorageReference =
                     FirebaseStorage.getInstance().getReference().child("TextoSenaPrueba")
                 val file_name: StorageReference = Folder.child("file" + FileUri!!.lastPathSegment)
-                Log.d("Mensaje1", FileUri.toString())
-                Log.d("Mensaje2", Folder.toString())
-                Log.d("Mensaje3", file_name.toString())
-
-
 
                 file_name.putFile(FileUri).addOnSuccessListener { taskSnapshot ->
                     file_name.getDownloadUrl().addOnSuccessListener { uri ->
@@ -148,10 +147,11 @@ class ActividadTextoSenaSubirNuevo : AppCompatActivity() {
                         val URLImg = uri.toString()
                         val user = hashMapOf(
                             "SignificadoTexto" to binding.significadoTexto.text.toString(),
+                            "SignificadoDescripcion" to binding.significadoDescripcion.text.toString(),
                             "SignificadoImagen" to URLImg
                         )
                         //manera 1
-                        db.collection("TextoSena").document("Lista-")
+                        db.collection("TextoSena").document()
                             .set(user)
                             .addOnSuccessListener { Log.d("TAG", "Se guardo correctamente 3") }
                             .addOnFailureListener { e -> Log.w("TAG", "error $e") }

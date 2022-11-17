@@ -35,7 +35,7 @@ class AuthActivity : AppCompatActivity() {
 
     }
     private fun setup(){
-        title = "Autenticacion"
+        title = "LOGIN"
         btnLogin.setOnClickListener {
             if (EmailEditText.text.isNotEmpty() && PasswordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance()
